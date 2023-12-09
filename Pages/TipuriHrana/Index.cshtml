@@ -1,0 +1,54 @@
+﻿@page
+@model Coptil_Ianc_Proiect1.Pages.TipuriHrana.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+    {
+        <a asp-page="Create">Create New</a>
+    }
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TipHrana[0].Denumire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipHrana[0].Pret)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipHrana[0].Observatii)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TipHrana) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Denumire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pret)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observatii)
+            </td>
+            <td>
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+                    {
+                        <a asp-page="./Edit" asp-route-id="@item.TipHranaId">Edit</a>
+                        <a asp-page="./Details" asp-route-id="@item.TipHranaId">Details</a>
+                        <a asp-page="./Delete" asp-route-id="@item.TipHranaId">Delete</a>
+                    }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

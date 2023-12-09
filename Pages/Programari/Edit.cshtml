@@ -1,0 +1,90 @@
+﻿@page
+@model Coptil_Ianc_Proiect1.Pages.Programari.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Programare</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Programare.ProgramareId" />
+            <div class="form-group">
+                <label asp-for="Programare.NumePrenumeClient" class="control-label"></label>
+                <input asp-for="Programare.NumePrenumeClient" class="form-control" />
+                <span asp-validation-for="Programare.NumePrenumeClient" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Programare.TelefonClient" class="control-label"></label>
+                <input asp-for="Programare.TelefonClient" class="form-control" />
+                <span asp-validation-for="Programare.TelefonClient" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Programare.Email" class="control-label"></label>
+                <input asp-for="Programare.Email" class="form-control" />
+                <span asp-validation-for="Programare.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Programare.DataSiOra" class="control-label"></label>
+                <input asp-for="Programare.DataSiOra" class="form-control" />
+                <span asp-validation-for="Programare.DataSiOra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Programare.NumePisica" class="control-label"></label>
+                <input asp-for="Programare.NumePisica" class="form-control" />
+                <span asp-validation-for="Programare.NumePisica" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Programare.VarstaPisica" class="control-label"></label>
+                <input asp-for="Programare.VarstaPisica" class="form-control" />
+                <span asp-validation-for="Programare.VarstaPisica" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Programare.RasaPisica" class="control-label"></label>
+                <input asp-for="Programare.RasaPisica" class="form-control" />
+                <span asp-validation-for="Programare.RasaPisica" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Programare.SexPisica" class="control-label"></label>
+                <input asp-for="Programare.SexPisica" class="form-control" />
+                <span asp-validation-for="Programare.SexPisica" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Programare.Observatii" class="control-label"></label>
+                <input asp-for="Programare.Observatii" class="form-control" />
+                <span asp-validation-for="Programare.Observatii" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Programare.TipHranaId" class="control-label"></label>
+                <select asp-for="Programare.TipHranaId" class="form-control" asp-items="ViewBag.TipHranaId"></select>
+                <span asp-validation-for="Programare.TipHranaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Programare.TipCameraId" class="control-label"></label>
+                <select asp-for="Programare.TipCameraId" class="form-control" asp-items="ViewBag.TipCameraId"></select>
+                <span asp-validation-for="Programare.TipCameraId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Programare.TipServiciuId" class="control-label"></label>
+                <select asp-for="Programare.TipServiciuId" class="form-control" asp-items="ViewBag.TipServiciuId"></select>
+                <span asp-validation-for="Programare.TipServiciuId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

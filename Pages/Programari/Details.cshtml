@@ -1,0 +1,91 @@
+﻿@page
+@model Coptil_Ianc_Proiect1.Pages.Programari.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Programare</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Programare.NumePrenumeClient)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Programare.NumePrenumeClient)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Programare.TelefonClient)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Programare.TelefonClient)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Programare.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Programare.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Programare.DataSiOra)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Programare.DataSiOra)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Programare.NumePisica)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Programare.NumePisica)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Programare.VarstaPisica)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Programare.VarstaPisica)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Programare.RasaPisica)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Programare.RasaPisica)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Programare.SexPisica)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Programare.SexPisica)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Programare.Observatii)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Programare.Observatii)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Programare.TipHrana)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Programare.TipHrana.Denumire)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Programare.TipCamera)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Programare.TipCamera.Denumire)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Programare.TipServiciu)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Programare.TipServiciu.Denumire)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Programare?.ProgramareId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

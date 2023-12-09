@@ -1,0 +1,102 @@
+﻿@page
+@model Coptil_Ianc_Proiect1.Pages.Programari.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Programare[0].NumePrenumeClient)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Programare[0].TelefonClient)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Programare[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Programare[0].DataSiOra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Programare[0].NumePisica)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Programare[0].VarstaPisica)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Programare[0].RasaPisica)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Programare[0].SexPisica)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Programare[0].Observatii)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Programare[0].TipHrana)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Programare[0].TipCamera)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Programare[0].TipServiciu)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Programare) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumePrenumeClient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelefonClient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataSiOra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumePisica)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VarstaPisica)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RasaPisica)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SexPisica)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observatii)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipHrana.Denumire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipCamera.Denumire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipServiciu.Denumire)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ProgramareId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ProgramareId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ProgramareId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

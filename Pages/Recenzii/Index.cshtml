@@ -1,0 +1,59 @@
+﻿@page
+@model Coptil_Ianc_Proiect1.Pages.Recenzii.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a asp-page="Create">Create New</a>
+    }
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Recenzie[0].Scor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recenzie[0].Comentariu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recenzie[0].Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recenzie[0].NumeAutor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Recenzie) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Scor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comentariu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeAutor)
+            </td>
+            <td>
+                <a asp-page="./Details" asp-route-id="@item.RecenzieId">Details</a>
+                @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+                {
+                    <a asp-page="./Delete" asp-route-id="@item.RecenzieId">Delete</a>
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

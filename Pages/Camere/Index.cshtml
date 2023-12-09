@@ -1,0 +1,54 @@
+﻿@page
+@model Coptil_Ianc_Proiect1.Pages.Camere.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+    {
+        <a asp-page="Create">Create New</a>
+    }
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Camera[0].Numar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Camera[0].CapacitateMaxima)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Camera[0].TipCamera)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Camera) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Numar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CapacitateMaxima)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipCamera.Denumire)
+            </td>
+            <td>
+                @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+                {
+                        <a asp-page="./Edit" asp-route-id="@item.CameraId">Edit</a>
+                        <a asp-page="./Details" asp-route-id="@item.CameraId">Details</a>
+                        <a asp-page="./Delete" asp-route-id="@item.CameraId">Delete</a>
+                    }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

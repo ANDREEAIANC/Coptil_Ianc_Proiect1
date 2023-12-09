@@ -1,0 +1,44 @@
+﻿@page
+@model Coptil_Ianc_Proiect1.Pages.Recenzii.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Recenzie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Recenzie.Scor" class="control-label"></label>
+                <input asp-for="Recenzie.Scor" class="form-control" min="1" max="5" />
+                <span asp-validation-for="Recenzie.Scor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Recenzie.Comentariu" class="control-label"></label>
+                <input asp-for="Recenzie.Comentariu" class="form-control" />
+                <span asp-validation-for="Recenzie.Comentariu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Recenzie.NumeAutor" class="control-label"></label>
+                <input asp-for="Recenzie.NumeAutor" class="form-control" />
+                <span asp-validation-for="Recenzie.NumeAutor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

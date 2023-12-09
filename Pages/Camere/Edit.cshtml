@@ -1,0 +1,45 @@
+﻿@page
+@model Coptil_Ianc_Proiect1.Pages.Camere.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Camera</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Camera.CameraId" />
+            <div class="form-group">
+                <label asp-for="Camera.Numar" class="control-label">Numar camera</label>
+                <input asp-for="Camera.Numar" class="form-control" />
+                <span asp-validation-for="Camera.Numar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Camera.CapacitateMaxima" class="control-label">Capacitate maxima</label>
+                <input asp-for="Camera.CapacitateMaxima" class="form-control" />
+                <span asp-validation-for="Camera.CapacitateMaxima" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Camera.TipCameraId" class="control-label">Tip camera</label>
+                <select asp-for="Camera.TipCameraId" class="form-control" asp-items="ViewBag.TipCameraId"></select>
+                <span asp-validation-for="Camera.TipCameraId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
